@@ -43,9 +43,8 @@ chmod +x ispconfig-debian12.sh
 - после суток работы запустить Mysql тюнер https://timeweb.cloud/docs/unix-guides/optimizing-mysql-with-mysqltuner и поправить настройки согласно рекомендациям
 ## Установка и настройка необходимых модулей
 - по необходимости доставим в систему утилиты и модули
+  (к примеру)
 ```bash
-  apt update
-  apt upgrade
   apt install mc 
   apt install php8.2-memcache
    ```
