@@ -46,7 +46,8 @@ chmod +x ispconfig-debian12.sh
 ```bash
   apt update
   apt upgrade
-  apt install wget php-cli php-zip unzip
+  apt install mc 
+  apt install php8.2-memcache
    ```
 - установка sphinxsearch
 - ```bash
@@ -60,8 +61,7 @@ chmod +x ispconfig-debian12.sh
    ```
 - установка composer
 ```bash
-php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-composer self-update
+apt install --no-install-recommends composer
    ```  
 
 ## Настройка логирования трассировок медленных запросов
