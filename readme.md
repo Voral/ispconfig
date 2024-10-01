@@ -55,6 +55,7 @@ chmod +x ispconfig-debian12.sh
   apt install mc 
   apt install php8.2-memcache
    ```
+  правки можно вносить в конец файла /etc/mysql/mariadb.conf.d/51-server.cnf
 - установка sphinxsearch
 - ```bash
   sudo apt-get install sphinxsearch
