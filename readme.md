@@ -108,8 +108,8 @@ su - web2 -s /bin/bash
 создаем симлинки на папки /upload/ и /bitrix/
 ```bash
 cd /var/www/clients/client0/web2/web
-ln -s /var/www/clients/client0/web1/web/upload upload
-ln -s /var/www/clients/client0/web1/web/bitrix bitrix
+ln -s /var/www/clients/client0/web1/web/upload .
+ln -s /var/www/clients/client0/web1/web/bitrix .
    ```
 
 Для корректной работы обоих сайтов хранение сессий рекомендуется сделать в БД
