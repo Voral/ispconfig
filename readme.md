@@ -97,8 +97,8 @@ web2:x:5005:5005:.... -> web2:x:5004:5005:....
 
 переходим в домашнюю папку пользователя web2 - меняем владельца
 ```bash
-cd /var/www/clients/client0/web2/web/bitrix
-find . -user 5005 -group 5005 -exec chown 5004:5005 {} +
+cd /var/www/clients/client0/web2
+find . -user 5005 -exec chown 5004:5005 {} +
 
    ```
 логинимся вторым пользователем 
@@ -107,13 +107,14 @@ su - web2 -s /bin/bash
    ```
 создаем симлинки на папки /upload/ и /bitrix/
 ```bash
-cd /var/www/clients/client0/web2/web/bitrix
+cd /var/www/clients/client0/web2/web
 ln -s /var/www/clients/client0/web1/web/upload upload
 ln -s /var/www/clients/client0/web1/web/bitrix bitrix
    ```
 
 Для корректной работы обоих сайтов хранение сессий рекомендуется сделать в БД
 https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=14026
+т.к. у сайтов разные тем директории, соответственно если хранить в файлах то надо приводить всё в одну, чтобы не кастомизировать проще перейти в БД
 
 ## Возможные проблемы и их решения
 ### Применяю настройки в ISPConfig - по факту ничего не изменяется
