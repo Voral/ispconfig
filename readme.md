@@ -86,6 +86,36 @@ https://raw.githubusercontent.com/Wladimir-N/ispconfig/debian12/autoinstall.sh
 Очередь сообщений можно глянуть в ISPConfig - Monitor - Mail Queue
 Там же рядом логи ISPConfig - Monitor - Mail log
 
+## Настройка сайтов для работы с одним ядром Bitrix
+работаем root пользователем:
+у пользователя под которым работает второй сайт в /etc/passwd меняем id пользователя и группы на те-же, что у первого сайта
+например, было
+web1:x:5004:5005:....
+web2:x:5005:5005:....
+меняем
+web2:x:5005:5005:.... -> web2:x:5004:5005:....
+
+переходим в домашнюю папку пользователя web2 - меняем владельца
+```bash
+cd /var/www/clients/client0/web2
+find . -user 5005 -exec chown 5004:5005 {} +
+
+   ```
+логинимся вторым пользователем 
+```bash
+su - web2 -s /bin/bash
+   ```
+создаем симлинки на папки /upload/ и /bitrix/
+```bash
+cd /var/www/clients/client0/web2/web
+ln -s /var/www/clients/client0/web1/web/upload .
+ln -s /var/www/clients/client0/web1/web/bitrix .
+   ```
+
+Для корректной работы обоих сайтов хранение сессий рекомендуется сделать в БД
+https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=14026
+т.к. у сайтов разные темп директории, соответственно если хранить в файлах то надо приводить всё в одну, чтобы не кастомизировать проще перейти в БД
+
 ## Возможные проблемы и их решения
 ### Применяю настройки в ISPConfig - по факту ничего не изменяется
 При этом в правом верхнем углу ISPConfig наблюдаются красный кружок в цифрой - это не применённые изменения
