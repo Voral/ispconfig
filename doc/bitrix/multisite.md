@@ -32,12 +32,6 @@
    ln -s /var/www/clients/client0/web2/web/bitrix .
    ln -s /var/www/clients/client0/web2/web/local .
    ```
-   ln -s /var/www/clients/client0/web2/web/upload .
-   ln -s /var/www/clients/client0/web2/web/bitrix .
-   ln -s /var/www/clients/client0/web2/web/local .
-
-/var/www/clients/client0/web2/web
-
 6. Копируем файлы данного сайта, которые при восстановлении из резервной копии были помещены в соответствующий подкаталог каталога bitrix/backup/sites/
 7. В панели управления битрикс для каждого сайта устанавливаем правильное значение параметра "Путь к корневой папке веб-сервера для этого сайта"
 8. Для корректной работы обоих сайтов хранение сессий рекомендуется сделать в БД согласно [Документации](https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=14026), т.к. у сайтов разные темп директории, соответственно если хранить в файлах то надо приводить всё в одну, чтобы не кастомизировать проще перейти в БД
