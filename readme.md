@@ -99,4 +99,4 @@ update-alternatives --config php
 ### Битрикс
 * [Развертывание сайта на Битрикс Управление Сайтом](/doc/bitrix/addsite.md)
 * [Установка в режиме многосайтовости](/doc/bitrix/multisite.md)
-* [Настройка общего git репозитория в режиме многосайтовости](/doc/bitrix/multisgit.md)
+* [Настройка общего git репозитория в режиме многосайтовости](/doc/bitrix/multigit.md)
