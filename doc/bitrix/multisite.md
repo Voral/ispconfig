@@ -28,8 +28,8 @@
    ```bash
    su - web1 -s /bin/bash
    cd /var/www/clients/client0/web2/web
-   ln -s /var/www/clients/client0/web2/web/upload .
-   ln -s /var/www/clients/client0/web2/web/bitrix .
+   ln -s /var/www/clients/client0/web1/web/upload .
+   ln -s /var/www/clients/client0/web1/web/bitrix .
    ```
 6. Копируем файлы данного сайта, которые при восстановлении из резервной копии были помещены в соответствующий подкаталог каталога bitrix/backup/sites/
 7. В панели управления битрикс для каждого сайта устанавливаем правильное значение параметра "Путь к корневой папке веб-сервера для этого сайта"
